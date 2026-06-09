@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Dental.Shared.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations; // use this when 
 
@@ -39,12 +40,91 @@ namespace DentalSystem.Models
          * Essentially, ICollection is a set of rules, an interface whilst a List is a sepcific product that follows those rules, so they are not even close to be the same thing.
          * Lists and Arrays are useful and have their own usecases, but for EF framework, ORMs(object relationa mappers) prefer ICollection for database relationships. This allows the framework to sneak in its own special lazy loading collections
          * instead of being forced to load havy, static memory Lists riht away.
-         * So, understna
+         * Dive in this topic deeper, cover IEnumerables, IList, ICollections and more-- basically data strctures basics of C#.
          */
+
         public virtual ICollection<Payment> Payments { get; set; } = new List<Payment>();
         [Display(Name = "Date of Birth")]
         [DataType(DataType.Date)]
         public DateTime? DateOfBirth { get; set; }
+
+        // Auto Calculated Age.
+        public int? Age => DateOfBirth.HasValue ? (int)((DateTime.Now - DateOfBirth.Value).TotalDays / 365.25) : null;
+
+        [Display(Name = "Gender")]
+        public string? Gender { get; set; }
+
+        [Display(Name = "Phone Number")]
+        public string? PhoneNumber { get; set; }
+
+        [Display(Name = "WhatsApp Number")]
+        public string? WhatsAppNumber { get; set; }
+
+        [Display(Name = "Postal Address")]
+        public string? PostalAddress { get; set; }
+
+        [Display(Name = "Residence")]
+        public string? Residence { get; set; }
+
+        [Display(Name = "Occupation")]
+        public string? Occupation { get; set; }
+
+        [Display(Name = "Student?")]
+        public bool IsStudent { get; set; }
+
+        [Display(Name = "School Name")]
+        public string? SchoolName { get; set; }
+
+        [Display(Name = "Class/Grade")]
+        public string? ClassGrade { get; set; }
+
+        // Medical conditions (up to 3)
+        [Display(Name = "Medical Condition 1")]
+        public string? MedicalCondition1 { get; set; }
+        [Display(Name = "Medical Condition 2")]
+        public string? MedicalCondition2 { get; set; }
+        [Display(Name = "Medical Condition 3")]
+        public string? MedicalCondition3 { get; set; }
+
+        // Medications (up to 3)
+        [Display(Name = "Medication 1")]
+        public string? Medication1 { get; set; }
+        [Display(Name = "Medication 2")]
+        public string? Medication2 { get; set; }
+        [Display(Name = "Medication 3")]
+        public string? Medication3 { get; set; }
+
+        // Allergies (up to 3)
+        [Display(Name = "Allergy 1")]
+        public string? Allergy1 { get; set; }
+        [Display(Name = "Allergy 2")]
+        public string? Allergy2 { get; set; }
+        [Display(Name = "Allergy 3")]
+        public string? Allergy3 { get; set; }
+
+        [Display(Name = "Emergency Contact Name")]
+        public string? EmergencyContactName { get; set; }
+
+        [Display(Name = "Emergency Contact Relationship")]
+        public string? EmergencyContactRelationship { get; set; }
+
+        [Display(Name = "Emergency Contact Number")]
+        public string? EmergencyContactNumber { get; set; }
+
+        [Display(Name = "Consent for Treatment")]
+        public bool ConsentForTreatment { get; set; }
+
+        // Original address field (keep for compatibility)
+        public string? Address { get; set; }
+
+        public virtual ICollection<Visit> Visits { get; set; } = new List<Visit>();
+        [Display(Name = "Age (if DOB unknown)")]
+        public int? ManualAge { get; set; }
+        [Display(Name = "Card Number")]
+        public string? CardNumber { get; set; }
+
+
+
 
     }
 }

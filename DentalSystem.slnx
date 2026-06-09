@@ -1,5 +1,5 @@
 <Solution>
-  <Project Path="Dental.API/Dental.API.csproj" />
-  <Project Path="Dental.Desktop/Dental.Desktop.csproj" />
-  <Project Path="Dental.Shared/Dental.Shared.csproj" />
+  <Project Path="Dental.API/API.csproj" />
+  <Project Path="Dental.Desktop/Desktop.csproj" />
+  <Project Path="Dental.Shared/Shared.csproj" />
 </Solution>
