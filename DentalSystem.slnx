@@ -1,4 +1,13 @@
 <Solution>
+  <Folder Name="/Docs/">
+    <File Path="Architecture.md" />
+    <File Path="Changelog.md" />
+    <File Path="ErrorLog.md" />
+    <File Path="ProgressNotes.md" />
+    <File Path="ReadMe.md" />
+    <File Path="Recap.md" />
+    <File Path="VersionHistory.md" />
+  </Folder>
   <Project Path="Dental.API/API.csproj" />
   <Project Path="Dental.Desktop/Desktop.csproj" />
   <Project Path="Dental.Shared/Shared.csproj" />
