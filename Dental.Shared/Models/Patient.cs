@@ -19,7 +19,7 @@ namespace DentalSystem.Models
          * - By default, EF loooks for property named Id or ClassNameId as the primary key so if u intend soemthing esle to be a primarykey, you must use the attirbute [Key]
          * - 
          */
-        [Required]
+        [Required] //makes EF to create Not Null in the column 
         [Display(Name = "Full Name")]
         public string FullName { get; set; } = string.Empty;
         /*
@@ -49,7 +49,24 @@ namespace DentalSystem.Models
         public DateTime? DateOfBirth { get; set; }
 
         // Auto Calculated Age.
-        public int? Age => DateOfBirth.HasValue ? (int)((DateTime.Now - DateOfBirth.Value).TotalDays / 365.25) : null;
+        [Display(Name = "Age")]
+        public int? Age
+        {
+            get
+            {
+                if (!DateOfBirth.HasValue) return null;
+
+                DateTime today = DateTime.Today;
+                int age = today.Year - DateOfBirth.Value.Year;
+
+                if (today.Month <DateOfBirth.Value.Month ||
+                        (today.Month == DateOfBirth.Value.Month && today.Day < DateOfBirth.Value.Day))
+                {
+                    age--;
+                }
+                return age;
+            }
+        }
 
         [Display(Name = "Gender")]
         public string? Gender { get; set; }

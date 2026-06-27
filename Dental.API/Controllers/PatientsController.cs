@@ -20,8 +20,9 @@ namespace Dental.API.Controllers
 
         public PatientsController(AppDbContext appDbContext)
         {
-            appDbContext = _appDbContext;
+            _appDbContext = appDbContext;
         }
+
       
     }
 
