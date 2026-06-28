@@ -45,3 +45,7 @@
     - Understand how Blazor hybrid maui works an ow to implement it in the project
     - Document heavily, and also, post the post.
 
+
+    28th JUNE
+
+    -

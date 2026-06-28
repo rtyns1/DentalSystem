@@ -26,7 +26,7 @@ namespace DentalSystem.Models
          * The Required attribute is a validation and databse constraint----- EF creates NOT NULL in the column.
          * A thr application level, ASP.NET core uses it for model validation - when submiting a form.
          *  Here it ensures that FullName must have a value before saving to the database or accepting user input esle if its null or empty string == exeception thrown
-         *  Display attribute is a UI lable -- spsecifies the frinedlyer name to be used in UI forms or error messages, but it is not used by EF for DB mapping.
+         *  Display attribute is a UI label -- spsecifies the frinedlyer name to be used in UI forms or error messages, but it is not used by EF for DB mapping.
          *  ASP.NET core uses it when generating k=lables.
          *  UI will show Full Name instead of FullName.
          *  So all thes are used extensively
