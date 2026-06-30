@@ -1,7 +1,8 @@
-﻿using Dental.Shared.Models;
+﻿using DentalSystem.Shared.Models;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations; // use this when 
+using System.ComponentModel.DataAnnotations;
+using DentalSystem.Models; // or the correct namespace where Visit is defined
 
 namespace DentalSystem.Models
 {

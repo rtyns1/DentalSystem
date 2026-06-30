@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using DentalSystem.Models;
 
-namespace Dental.Shared.Models
+namespace DentalSystem.Shared.Models
 {
     public class Visit
     {
